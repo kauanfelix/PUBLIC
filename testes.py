@@ -11,18 +11,9 @@ if qr_code:
 
 
 import streamlit as st
-import streamlit.components.v1 as components
 
-html_string = '''
-<form>
-  <label for="telefone">Número de celular:</label><br>
-  <input type="tel" id="telefone" name="telefone" pattern="[0-9]{2}-[0-9]{5}-[0-9]{4}" required><br>
-  <small>Formato: 99-99999-9999</small><br><br>
-  <input type="submit">
-</form>
+from streamlit_back_camera_input import back_camera_input
 
-'''
-
-components.html(html_string)  # JavaScript works
-
-st.markdown(html_string, unsafe_allow_html=True)
+image = back_camera_input()
+if image:
+    st.image(image)
