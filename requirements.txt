@@ -36,3 +36,4 @@ streamlit-camera-input-live
 streamlit-webrtc
 xmltodict
 PyMySQL~=1.0.3
+streamlit-back-camera-input
