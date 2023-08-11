@@ -9,6 +9,7 @@ streamlit-on-Hover-tabs
 streamlit-tags
 streamlit-authenticator
 streamlit-extras
+streamlit-qrcode-scanner
 pyodbc
 plotly~=5.15.0
 PyPDF2
