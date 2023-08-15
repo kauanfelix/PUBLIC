@@ -37,3 +37,4 @@ streamlit-webrtc
 xmltodict
 PyMySQL
 pillow-heif
+pyzbar
