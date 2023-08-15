@@ -28,13 +28,12 @@ bcrypt
 PyYAML
 Deta
 pywhatkit
-pyautogui~=0.9.54
-matplotlib~=3.7.1
+pyautogui
+matplotlib
 streamlit-toggle-switch
 streamlit-ace
 streamlit-camera-input-live
 streamlit-webrtc
 xmltodict
-PyMySQL~=1.0.3
-streamlit-back-camera-input
+PyMySQL
 pillow-heif
