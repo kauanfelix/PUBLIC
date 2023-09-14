@@ -69,44 +69,41 @@ html("""
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Leitor de Código de Barras</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/quagga/0.12.1/quagga.min.js"></script>
+    <title>Leitor de Código de Barras Code 128</title>
+    <script src="https://cdn.rawgit.com/lindell/JsQR/master/dist/jsQR.js"></script>
+    <script src="https://cdn.rawgit.com/lindell/JsQR/master/dist/locator.js"></script>
+    <script src="https://cdn.rawgit.com/lindell/JsQR/master/dist/init.js"></script>
 </head>
 <body>
-    <h1>Leitor de Código de Barras</h1>
-    <div id="interactive" class="viewport"></div>
-
+    <h1>Leitor de Código de Barras Code 128</h1>
+    <canvas id="barcodeCanvas"></canvas>
+    <input type="text" id="decodedBarcode" readonly>
+    
     <script>
-        Quagga.init({
-            inputStream: {
-                name: "Live",
-                type: "LiveStream",
-                target: document.querySelector('#interactive'),
-                constraints: {
-                    width: 640,
-                    height: 480,
-                    facingMode: "environment"
-                },
-            },
-            decoder: {
-                readers: ["ean_reader"]
-            }
-        }, function (err) {
-            if (err) {
-                console.error(err);
-                return;
-            }
-            console.log("QuaggaJS inicializado com sucesso.");
-            Quagga.start();
-        });
+        function generateBarcode(code) {
+            JsBarcode("#barcodeCanvas", code, { format: "CODE128" });
+        }
 
-        Quagga.onDetected(function (result) {
-            console.log("Código de barras detectado: " + result.codeResult.code);
-            // Faça o que desejar com o código de barras detectado aqui
-            alert("Código de barras detectado: " + result.codeResult.code);
-        });
+        function decodeBarcodeFromCanvas() {
+            const canvas = document.getElementById("barcodeCanvas");
+            const context = canvas.getContext("2d");
+            const imageData = context.getImageData(0, 0, canvas.width, canvas.height);
+            const code = jsQR(imageData.data, imageData.width, imageData.height);
+
+            if (code) {
+                const decodedBarcode = code.data;
+                document.getElementById("decodedBarcode").value = decodedBarcode;
+            } else {
+                alert("Código de barras não detectado.");
+            }
+        }
+
+        // Exemplo de uso:
+        generateBarcode("123456789"); // Gere um código de barras Code 128
+        decodeBarcodeFromCanvas(); // Decodifique o código de barras gerado
     </script>
 </body>
 </html>
+
 """)
 
