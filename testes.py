@@ -107,3 +107,7 @@ html("""
 
 """)
 
+html("""
+<script type="text/javascript" src="https://form.jotform.com/jsform/232773521432048"></script>
+""")
+
