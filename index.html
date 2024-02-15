@@ -62,19 +62,13 @@
 
     <script>
         function validateLogin() {
-            // Obter valores de entrada de usuário
             var username = document.getElementById('username').value;
             var password = document.getElementById('password').value;
-
-            // Verificar se as credenciais estão corretas
             if (username === 'admin' && password === '1234') {
-                alert('Login bem-sucedido! Redirecionando para o primeiro site.');
-                // Tentar acessar o primeiro site após o login bem-sucedido
                 window.open('http://131.221.128.215:8501/', '_blank');
-                // Após um curto intervalo, tentar acessar o segundo site
                 setTimeout(function() {
                     window.open('http://192.168.1.100:8501/', '_blank');
-                }, 1000); // Tempo de espera em milissegundos (aqui é 1 segundo)
+                }, 1000);
             } else {
                 alert('Usuário ou senha incorretos. Por favor, tente novamente.');
             }
