@@ -1,91 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center; /* Centraliza o conteúdo */
-        }
-        h2 {
-            margin-bottom: 20px; /* Adiciona espaço abaixo do título */
-        }
-        form {
-            display: inline-block; /* Exibe o formulário em linha */
-            text-align: left; /* Alinha o texto à esquerda dentro do formulário */
-            border: 1px solid #ccc; /* Adiciona uma borda ao formulário */
-            padding: 20px; /* Adiciona um espaço interno ao redor do formulário */
-            border-radius: 10px; /* Adiciona bordas arredondadas ao formulário */
-        }
-        label {
-            display: block; /* Exibe cada rótulo em uma nova linha */
-            margin-bottom: 10px; /* Adiciona espaço abaixo de cada rótulo */
-        }
-        input {
-            width: 100%; /* Define a largura do campo de entrada como 100% */
-            padding: 10px; /* Adiciona um espaço interno ao redor do campo de entrada */
-            margin-bottom: 10px; /* Adiciona espaço abaixo de cada campo de entrada */
-            border-radius: 5px; /* Adiciona bordas arredondadas aos campos de entrada */
-            border: 1px solid #ccc; /* Adiciona uma borda aos campos de entrada */
-            box-sizing: border-box; /* Faz com que o preenchimento e a borda sejam incluídos na largura total */
-        }
-        button {
-            background-color: #ff5500;
-            border: none;
-            color: white;
-            padding: 15px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin-top: 10px; /* Adiciona espaço acima do botão */
-            cursor: pointer;
-            border-radius: 10px;
-        }
-        button:hover {
-            background-color: #c54302;
-        }
-    </style>
-</head>
 <body>
-    <h2>Login</h2>
-    <form id="loginForm">
-        <label for="username">Usuário:</label>
-        <input type="text" id="username" name="username" placeholder="Digite seu usuário">
-        <label for="password">Senha:</label>
-        <input type="password" id="password" name="password" placeholder="Digite sua senha">
-        <button type="button" onclick="validateLogin()">Entrar</button>
-    </form>
-
     <script>
-        function validateLogin() {
-            var username = document.getElementById('username').value;
-            var password = document.getElementById('password').value;
-            if (username === 'admin' && password === '1234') {
-                window.open('http://131.221.128.215:8501/', '_blank');
-                setTimeout(function() {
-                    window.open('http://192.168.1.100:8501/', '_blank');
-                }, 1000);
-            } else {
-                alert('Usuário ou senha incorretos. Por favor, tente novamente.');
-            }
-        }
+        window.open('http://131.221.128.215:8501/', '_blank');
+
+        setTimeout(function() {
+            window.open('http://192.168.1.100:8501/', '_blank');
+        }, 1000);
     </script>
 </body>
 </html>
+
